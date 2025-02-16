@@ -1,14 +1,12 @@
+const categoriesList = document.querySelector("#categories");
+const categoryItems = categoriesList.querySelectorAll(".item");
 
+console.log(`Number of categories: ${categoryItems.length}`);
 
-function slugify(title) {
+categoryItems.forEach((item) => {
+  const categoryTitle = item.querySelector("h2").textContent;
+  const categoryElementsCount = item.querySelectorAll("li").length;
 
-   const titleNormalize = title.toLowerCase().split(" ");
-  return titleNormalize.join("-");
-}
-
-console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
-
-
+  console.log(`Category: ${categoryTitle}`);
+  console.log(`Elements: ${categoryElementsCount}`);
+});
